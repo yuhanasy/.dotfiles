@@ -53,3 +53,10 @@ grn() { git rebase -i HEAD~"$1"; }
 # Do an interactive rebase to a supplied commit hash (e.g. grbc 80e1625)
 grbic() { git rebase -i "$1"; }
 
+#---------------------
+# Prompt
+#---------------------
+# install via homebrew
+# brew install starship
+# Set Starship ZSH as a prompt
+eval "$(starship init zsh)"
