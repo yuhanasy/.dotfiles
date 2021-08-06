@@ -60,3 +60,16 @@ grbic() { git rebase -i "$1"; }
 # brew install starship
 # Set Starship ZSH as a prompt
 eval "$(starship init zsh)"
+
+#---------------------
+# Plugins
+#---------------------
+# 1. Create dir to store plugins
+#     mkdir ~/.zsh
+# 2. Install plugins by cloning the repo (it will allow later to easily keep it up-to-date by pulling the master):
+
+# Clone repo 'fast-syntax-highlighting' to `~/.zsh/` directory
+# cd ~/.zsh && git clone git@github.com:zdharma/fast-syntax-highlighting.git
+# Enable 'fast-syntax-highlighting' plugin in ZSH
+source /Users/yuhanasy/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
