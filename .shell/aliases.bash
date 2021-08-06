@@ -47,3 +47,14 @@ alias gset='git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`'
 grn() { git rebase -i HEAD~"$1"; }
 # Do an interactive rebase to a supplied commit hash (e.g. grbc 80e1625)
 grbic() { git rebase -i "$1"; }
+
+# databases
+alias start_postgres="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias stop_postgres="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+alias pgup="start_postgres"
+alias pgdown="stop_postgres"
+
+alias start_mysql="mysql.server start"
+alias stop_mysql="mysql.server stop"
+alias mysqlup="start_mysql"
+alias mysqldown="stop_mysql"
