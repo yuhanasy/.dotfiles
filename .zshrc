@@ -209,3 +209,11 @@ source /Users/yuhanasy/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.pl
 # Allow the use of the z plugin to easily navigate directories
 # get Z script from here https://github.com/rupa/z/blob/master/z.sh
 . /usr/local/etc/profile.d/z.sh
+
+#------------------
+# Miscellaneous
+#------------------
+# turn on the more powerful completion system
+autoload -Uz compinit && compinit
+# case insensitive path-completion
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 
