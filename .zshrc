@@ -155,3 +155,6 @@ eval "$(starship init zsh)"
 # Enable 'fast-syntax-highlighting' plugin in ZSH
 source /Users/yuhanasy/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
+# Allow the use of the z plugin to easily navigate directories
+# get Z script from here https://github.com/rupa/z/blob/master/z.sh
+. /usr/local/etc/profile.d/z.sh
