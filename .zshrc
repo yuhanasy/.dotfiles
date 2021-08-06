@@ -138,10 +138,61 @@ grbic() { git rebase -i "$1"; }
 #---------------------
 # Prompt
 #---------------------
+# choose between 1. starship, 2. spaceship
+
+# 1. starship
 # install via homebrew
 # brew install starship
 # Set Starship ZSH as a prompt
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
+
+# 2. starship
+# install via homebrew
+# brew install scpaceship
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit
+promptinit
+prompt spaceship
+
+# spacehip options, see https://spaceship-prompt.sh/options/
+SPACESHIP_PROMPT_ORDER=(
+  time          # Time stamps section
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  package       # Package version
+  git           # Git section (git_branch + git_status)
+  # hg            # Mercurial section (hg_branch  + hg_status)
+  gradle        # Gradle section
+  maven         # Maven section
+  node          # Node.js section
+  ruby          # Ruby section
+  # elixir        # Elixir section
+  xcode         # Xcode section
+  swift         # Swift section
+  golang        # Go section
+  # php           # PHP section
+  # rust          # Rust section
+  # haskell       # Haskell Stack section
+  # julia         # Julia section
+  docker        # Docker section
+  aws           # Amazon Web Services section
+  gcloud        # Google Cloud Platform section
+  # venv          # virtualenv section
+  # conda         # conda virtualenv section
+  pyenv         # Pyenv section
+  # dotnet        # .NET section
+  # ember         # Ember.js section
+  kubectl       # Kubectl context section
+  # terraform     # Terraform workspace section
+  exec_time     # Execution time
+  line_sep      # Line break
+  battery       # Battery level and status
+  vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
 
 #---------------------
 # Plugins
