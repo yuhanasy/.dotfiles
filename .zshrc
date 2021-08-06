@@ -1,4 +1,12 @@
 #------------------
+# References
+#------------------
+# 1. https://robertcooper.me/post/elegant-development-experience-with-zsh-and-hyper-terminal
+# 2. https://gist.github.com/robertcoopercode/d761345c35d59c4d831bb8af0c9982d1
+# 3. https://dev.to/netguru/howto-my-terminal-shell-setup-hyper-js-zsh-starship-2j2k
+# 4. https://scriptingosx.com/2019/06/moving-to-zsh/
+
+#------------------
 # Shell Variables
 #------------------
 
@@ -217,3 +225,11 @@ source /Users/yuhanasy/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.pl
 autoload -Uz compinit && compinit
 # case insensitive path-completion
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 
+
+# Enable the addition of zsh hook functions
+autoload -U add-zsh-hook
+# Set the tab title to the current working directory before each prompt
+function tabTitle () {
+  window_title="\033]0;${PWD##*/}\007"
+  echo -ne "$window_title"
+}
