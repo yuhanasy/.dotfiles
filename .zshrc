@@ -64,16 +64,8 @@ load-nvmrc() {
 # Run load-nvmrc on initial shell load
 load-nvmrc
 
-# Set the tab title to the current working directory before each prompt
-function tabTitle () {
-  window_title="\033]0;${PWD##*/}\007"
-  echo -ne "$window_title"
-}
-
 # Executes load-nvmrc when the present working directory (pwd) changes
 # add-zsh-hook chpwd load-nvmrc
-# Executes tabTitle before each prompt
-add-zsh-hook precmd tabTitle
 
 
 #---------------------
@@ -167,12 +159,28 @@ source /Users/yuhanasy/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.pl
 # turn on the more powerful completion system
 autoload -Uz compinit && compinit
 # case insensitive path-completion
-zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 
 # Enable the addition of zsh hook functions
 autoload -U add-zsh-hook
+
 # Set the tab title to the current working directory before each prompt
 function tabTitle () {
-  window_title="\033]0;${PWD##*/}\007"
-  echo -ne "$window_title"
+  local 'dir_project'
+
+  # to display icon that match to directory project via hyper-tabs-enhanced, we need to return string that match
+  # this regex /(?:[\s]+|^)(gulp|php|node|npm|yarn|vim|nvim|python|mysql)(?:[\s]+|\d+$)/i
+  # this is according to code in https://github.com/henrikdahl/hyper-tabs-enhanced/blob/master/index.js
+  # copy conditional from here https://github.com/spaceship-prompt/spaceship-prompt/tree/master/sections
+  if [[ -f package.json || -d node_modules ]]; then
+    dir_project=": node"
+  elif [[ -n "$PYENV_VERSION" || -f .python-version || -f requirements.txt || -f pyproject.toml ]]; then
+    dir_project=": python"
+  fi
+
+  window_title="\033]0;"${PWD##*/}${dir_project}"\007"
+  echo -ne "${window_title}"
 }
+# Executes tabTitle before each prompt
+add-zsh-hook precmd tabTitle
+
