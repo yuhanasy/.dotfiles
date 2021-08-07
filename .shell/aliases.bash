@@ -58,3 +58,25 @@ alias start_mysql="mysql.server start"
 alias stop_mysql="mysql.server stop"
 alias mysqlup="start_mysql"
 alias mysqldown="stop_mysql"
+
+## npm aliases
+alias ni="npm install";
+alias nrs="npm run start -s --";
+alias nrb="npm run build -s --";
+alias nrd="npm run dev -s --";
+alias nrt="npm run test -s --";
+alias nrtw="npm run test:watch -s --";
+alias nrv="npm run validate -s --";
+alias rmn="rm -rf node_modules";
+alias flush-npm="rm -rf node_modules package-lock.json && npm i && say NPM is done";
+alias nicache="npm install --prefer-offline";
+alias nioff="npm install --offline";
+
+## yarn aliases
+alias yar="yarn run";
+alias yas="yarn run start";
+alias yab="yarn run build";
+alias yat="yarn run test";
+alias yav="yarn run validate";
+alias yoff="yarn add --offline";
+alias ypm="echo \"Installing deps without lockfile and ignoring engines\" && yarn install --no-lockfile --ignore-engines"
