@@ -163,7 +163,15 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   // install: hyper i plugin-name
-  plugins: ["hypercwd", "hyper-pane", "hyper-search", "hyper-night-owl", "hyper-opacity", "hyper-tabs-enhanced"],
+  plugins: [
+    "hypercwd",
+    "hyper-pane",
+    "hyper-search",
+    "hyper-opacity",
+    "hyper-night-owl",
+    "hyper-tabs-enhanced",
+    "hyper-drop-file",
+  ],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
