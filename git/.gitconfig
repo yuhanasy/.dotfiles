@@ -1,0 +1,9 @@
+[user]
+	email = yulianto.yuhanas@gmail.com
+	name = yuhanas yulianto
+[pull]
+	rebase = false
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
+[push]
+	autoSetupRemote = true
