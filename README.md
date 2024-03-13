@@ -1,6 +1,6 @@
 # .dotfiles
 ---
-collection of my personal dotfiles
+Collection of my personal dotfiles
 
 ## Installation
 Clone this repository 
@@ -13,8 +13,8 @@ Install stow
 `brew install stow`
 
 Use stow to symlink dotfiles to home directory
-`
+```
 cd ~/.dotfiles
 stow fish
 stow nvim
-`
+```
