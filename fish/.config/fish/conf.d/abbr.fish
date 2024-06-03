@@ -60,6 +60,7 @@ abbr gset 'git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`'
 # Do an interactive rebase to a supplied commit hash (e.g. grbc 80e1625)
 # grbic() { git rebase -i "$1"; }
 
+
 # databases
 abbr start_postgres "pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
 abbr stop_postgres "pg_ctl -D /usr/local/var/postgres stop -s -m fast"
@@ -95,3 +96,9 @@ abbr ypm "echo \"Installing deps without lockfile and ignoring engines\" && yarn
 
 ## applications
 abbr chrome:dev "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --auto-open-devtools-for-tabs"
+
+# Misc
+## increase node heap memory
+abbr up_node_mem "export NODE_OPTIONS=--max_old_space_size=8192"
+abbr vite_anal "npx vite-bundle-visualizer"
+abbr is_esm "npx is-esm"

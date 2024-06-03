@@ -1,6 +1,8 @@
 [user]
 	email = yulianto.yuhanas@gmail.com
 	name = yuhanas yulianto
+[includeIf "gitdir/i:~/Documents/work/"]
+  path = ~/.gitconfig-work
 [pull]
 	rebase = false
 [url "git@bitbucket.org:"]
