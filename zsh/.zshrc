@@ -23,7 +23,7 @@ export GPG_TTY=$(tty)
 # PATH Manipulations
 #------------------
 # load PATH from ~/.shell/path.bash
-source /Users/yuhanasy/.shell/path.bash
+source ~/.shell/path.bash
 
 
 #------------------
@@ -77,7 +77,7 @@ fi
 # General Aliases
 #---------------------
 # load aliases from ~/.shell/aliases.bash
-source /Users/yuhanasy/.shell/aliases.bash
+source ~/.shell/aliases.bash
 
 alias change="code ~/.zshrc" # Open .zshrc to be edited in VS Code
 alias update="source ~/.zshrc" # Re-run source command on .zshrc to update current terminal session with new settings
@@ -92,55 +92,7 @@ alias update="source ~/.zshrc" # Re-run source command on .zshrc to update curre
 # install via homebrew
 # brew install starship
 # Set Starship ZSH as a prompt
-# eval "$(starship init zsh)"
-
-# 2. starship
-# install via homebrew
-# brew install scpaceship
-# Set Spaceship ZSH as a prompt
-autoload -U promptinit
-promptinit
-prompt spaceship
-
-# spacehip options, see https://spaceship-prompt.sh/options/
-SPACESHIP_PROMPT_ORDER=(
-  time          # Time stamps section
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  package       # Package version
-  git           # Git section (git_branch + git_status)
-  # hg            # Mercurial section (hg_branch  + hg_status)
-  gradle        # Gradle section
-  maven         # Maven section
-  node          # Node.js section
-  ruby          # Ruby section
-  # elixir        # Elixir section
-  xcode         # Xcode section
-  swift         # Swift section
-  golang        # Go section
-  # php           # PHP section
-  # rust          # Rust section
-  # haskell       # Haskell Stack section
-  # julia         # Julia section
-  docker        # Docker section
-  aws           # Amazon Web Services section
-  gcloud        # Google Cloud Platform section
-  # venv          # virtualenv section
-  # conda         # conda virtualenv section
-  pyenv         # Pyenv section
-  # dotnet        # .NET section
-  # ember         # Ember.js section
-  kubectl       # Kubectl context section
-  # terraform     # Terraform workspace section
-  exec_time     # Execution time
-  line_sep      # Line break
-  battery       # Battery level and status
-  vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
+eval "$(starship init zsh)"
 
 #---------------------
 # Plugins
@@ -152,7 +104,7 @@ SPACESHIP_PROMPT_ORDER=(
 # Clone repo 'fast-syntax-highlighting' to `~/.zsh/` directory
 # cd ~/.zsh && git clone git@github.com:zdharma/fast-syntax-highlighting.git
 # Enable 'fast-syntax-highlighting' plugin in ZSH
-source /Users/yuhanasy/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # Allow the use of the z plugin to easily navigate directories
 # get Z script from here https://github.com/rupa/z/blob/master/z.sh
@@ -166,31 +118,8 @@ autoload -Uz compinit && compinit
 # case insensitive path-completion
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
 
-# Enable the addition of zsh hook functions
-autoload -U add-zsh-hook
-
-# Set the tab title to the current working directory before each prompt
-function tabTitle () {
-  local 'dir_project'
-
-  # to display icon that match to directory project via hyper-tabs-enhanced, we need to return string that match
-  # this regex /(?:[\s]+|^)(gulp|php|node|npm|yarn|vim|nvim|python|mysql)(?:[\s]+|\d+$)/i
-  # this is according to code in https://github.com/henrikdahl/hyper-tabs-enhanced/blob/master/index.js
-  # copy conditional from here https://github.com/spaceship-prompt/spaceship-prompt/tree/master/sections
-  if [[ -f package.json || -d node_modules ]]; then
-    dir_project=": node"
-  elif [[ -n "$PYENV_VERSION" || -f .python-version || -f requirements.txt || -f pyproject.toml ]]; then
-    dir_project=": python"
-  fi
-
-  window_title="\033]0;"${PWD##*/}${dir_project}"\007"
-  echo -ne "${window_title}"
-}
-# Executes tabTitle before each prompt
-add-zsh-hook precmd tabTitle
-
 # bun completions
-[ -s "/Users/yuhanasy/.bun/_bun" ] && source "/Users/yuhanasy/.bun/_bun"
+[ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -198,3 +127,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # node
 # export NODE_OPTIONS=--max_old_space_size=5120
+
+PATH=~/.console-ninja/.bin:$PATH

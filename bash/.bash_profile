@@ -3,7 +3,7 @@ shopt -s autocd
 
 # Aliases
 # load aliases from ~/.zsh/aliases.zsh
-source /Users/yuhanasy/.shell/aliases.bash
+source ~/.shell/aliases.bash
 
 alias change="code ~/.bashrc" # Open .bashrc to be edited in VS Code
 alias update="source ~/.bashrc" # Re-run source command on .bashrc to update current terminal session with new settings
@@ -27,7 +27,7 @@ export SDKMAN_DIR="/Users/vega/.sdkman"
 # PATH Manipulations
 #------------------
 # load PATH from ~/.shell/path.bash
-source /Users/yuhanasy/.shell/path.bash
+source ~/.shell/path.bash
 
 #---------------------
 # Prompt

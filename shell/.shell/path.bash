@@ -23,6 +23,6 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 # Flutter
-export PATH="$PATH:/Users/yuhanasy/flutter/bin"
+export PATH="$PATH:~/flutter/bin"
 # Go
 export PATH=${HOME}/go/bin:$PATH

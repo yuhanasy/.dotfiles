@@ -3,14 +3,14 @@ alias ll="ls -al" # List all files in current directory in long list format
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias o="open ." # Open the current directory in Finderalias dotfiles='/usr/bin/git --git-dir=/Users/yuhanasy/.dotfiles/ --work-tree=/Users/yuhanasy'
+alias o="open ." # Open the current directory in Finderalias dotfiles='/usr/bin/git --git-dir=~/.dotfiles/ --work-tree=~'
 alias c='clear' # Clear terminal
 alias icloud="cd ~/Library/Mobile\ Documents/com~apple~CloudDocs" # cd into iCloud drive folder in terminal
 alias cat="bat"
 
 # Dotfiles alias
 # ex: dotfiles status, dotfiles add file, dotfiles commit -m 'add file'
-alias dot='/usr/bin/git --git-dir=/Users/yuhanasy/.dotfiles/ --work-tree=/Users/yuhanasy'
+alias dot='/usr/bin/git --git-dir=~/.dotfiles/ --work-tree=~'
 
 # Git Aliases
 alias ga="git add ."

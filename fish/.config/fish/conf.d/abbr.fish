@@ -3,7 +3,7 @@ abbr ll "ls -al" # List all files in current directory in long list format
 abbr .. 'cd ..'
 abbr ... 'cd ../..'
 abbr .... 'cd ../../..'
-abbr o "open ." # Open the current directory in Finderalias dotfiles='/usr/bin/git --git-dir=/Users/yuhanasy/.dotfiles/ --work-tree=/Users/yuhanasy'
+abbr o "open ." # Open the current directory in Finderalias dotfiles='/usr/bin/git --git-dir=~/.dotfiles/ --work-tree=~'
 abbr c clear # Clear terminal
 abbr icloud "cd ~/Library/Mobile\ Documents/com~apple~CloudDocs" # cd into iCloud drive folder in terminal
 abbr cat bat
@@ -13,7 +13,7 @@ abbr n nvim
 
 # Dotfiles alias
 # ex: dotfiles status, dotfiles add file, dotfiles commit -m 'add file'
-abbr dot '/usr/bin/git --git-dir=/Users/yuhanasy/.dotfiles/ --work-tree=/Users/yuhanasy'
+abbr dot '/usr/bin/git --git-dir=~/.dotfiles/ --work-tree=~'
 
 # Git Aliases
 abbr ga "git add ."

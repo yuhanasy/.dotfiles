@@ -5,8 +5,8 @@ brew install fish
 
 # add fish to list of shells
 fish_path=$(which fish)
-echo "$fish_path # move to the first in list" >>/etc/shells
-nvim /etc/shells
+sudo echo "$fish_path # move to the first in list" >>/etc/shells
+sudo vim /etc/shells
 
 # set fish as default shell
 cd ~
