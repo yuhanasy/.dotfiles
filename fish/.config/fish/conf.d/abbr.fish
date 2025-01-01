@@ -1,15 +1,22 @@
-abbr ls 'ls -G' # Enable colorized output for `ls` command.
-abbr ll "ls -al" # List all files in current directory in long list format
+abbr ch-fish 'nvim ~/.config/fish/config.fish'
+abbr up-fish 'source ~/.config/fish/config.fish'
+abbr ch-wezterm 'nvim ~/.wezterm.lua'
+
+
+abbr ls 'eza --icons=always' # Enable colorized output for `ls` command.
+abbr ll "eza --icons=always -al" # List all files in current directory in long list format
+abbr cd z # use zoxide for better cd
 abbr .. 'cd ..'
 abbr ... 'cd ../..'
 abbr .... 'cd ../../..'
 abbr o "open ." # Open the current directory in Finderalias dotfiles='/usr/bin/git --git-dir=~/.dotfiles/ --work-tree=~'
 abbr c clear # Clear terminal
 abbr icloud "cd ~/Library/Mobile\ Documents/com~apple~CloudDocs" # cd into iCloud drive folder in terminal
-abbr cat bat
+abbr cat bat --color=always
 
 abbr t tmux
 abbr n nvim
+abbr wez wezterm
 
 # Dotfiles alias
 # ex: dotfiles status, dotfiles add file, dotfiles commit -m 'add file'
